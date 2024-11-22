@@ -23,4 +23,4 @@ This project uses the YOLOv5 object detection model to detect insects through a 
    - Obtain a Line Notify token from Line Notify.
    - Replace LINE_TOKEN in the script with your token.
   
-4. **Run python file
+4. **Run python file**
