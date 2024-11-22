@@ -31,7 +31,7 @@ def line_Notify(text="ตรวจพบแมลง" ) :
 # Attempt to load YOLOv5 model
 try:
     # Load the YOLOv5 model
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='/Users/punchpnp/Downloads/test2/bestGame.pt', force_reload=True)
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path='/Users/punchpnp/Downloads/test2/bestGG.pt', force_reload=True)
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")
