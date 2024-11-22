@@ -6,13 +6,12 @@ import requests
 import platform
 import pathlib
 
-# Fix the path issue on Windows
+# Fix the path issue
 if platform.system() == 'Windows':
     pathlib.PosixPath = pathlib.WindowsPath
 else:
     pathlib.WindowsPath = pathlib.PosixPath
 
-# Suppress specific warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 # Line Notify
@@ -28,17 +27,16 @@ def line_Notify(text="ตรวจพบแมลง" ) :
     else:
         print(f"Error 1  sending notification: {response.status_code}")
 
-# Attempt to load YOLOv5 model
 try:
-    # Load the YOLOv5 model
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path='/Users/punchpnp/Downloads/test2/bestGG.pt', force_reload=True)
+    model_path = pathlib.Path(r"bestGG.pt").resolve()
+    model_path = str(model_path)
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, force_reload=True)
     print("Model loaded successfully.")
 except Exception as e:
     print(f"Error loading model: {e}")
     exit()
 
-# Open the webcam
-cap = cv2.VideoCapture(1)  # Change 1 to your correct camera index
+cap = cv2.VideoCapture(0)  # Change 0 or 1 to your correct camera index
 
 if not cap.isOpened():
     print("Error: Could not open webcam.")
