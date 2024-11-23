@@ -17,10 +17,18 @@ This project uses the YOLOv5 object detection model to detect insects through a 
 
 2. **Install dependencies: Install the required Python libraries**:
    ```bash
-   pip install opencv-python torch requests
+   pip install opencv-python torch requests ultralytics
 
 3. **Set up Line Notify**:
    - Obtain a Line Notify token from Line Notify.
    - Replace LINE_TOKEN in the script with your token.
   
 4. **Run python file**
+   - Yolov5
+   ```bash
+   python ./detect_v5.py
+   ```
+   - Yolo11
+   ```bash
+   python ./detect-v11.py
+   ```
