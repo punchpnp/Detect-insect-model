@@ -36,7 +36,7 @@ except Exception as e:
     print(f"Error loading model: {e}")
     exit()
 
-cap = cv2.VideoCapture(0)  # Change 0 or 1 to your correct camera index
+cap = cv2.VideoCapture(1)  # Change 0 or 1 to your correct camera index
 
 if not cap.isOpened():
     print("Error: Could not open webcam.")
